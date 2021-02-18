@@ -22,3 +22,6 @@ h1{
     display: flex;
     justify-content: center;
 }
+.done{
+    text-decoration: line-through;
+}

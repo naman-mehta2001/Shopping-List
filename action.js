@@ -8,7 +8,6 @@ function inputLength() {
 function addElement(){
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(input.value));
-        li.appendChild(document.createElement("button"))
         ul.appendChild(li);
         input.value="";
 }
