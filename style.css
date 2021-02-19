@@ -19,6 +19,7 @@ h1{
     border-radius: 5px;
 }
 .ulwrapper{
+    max-width: 500px;
     display: flex;
     justify-content: center;
 }
