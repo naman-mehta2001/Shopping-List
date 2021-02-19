@@ -10,17 +10,17 @@ function delButton(parent) {
 	del.className = "delete";
 	parent.appendChild(del);	
 }
-//delete functionality ; specify [i] in all for loops!
-function deleteMe() {
-	for (var i = 0; i < dlt.length; i++) {
-	dlt[i].addEventListener("click", function() {
-		this.parentNode.remove();
-		})
-	}
-}
-
 function addToggle() {
 	this.classList.toggle("done");
+}
+//delete and line thru functionality ; specify [i] in all for loops!
+function deleteMeAndAddingLineThru() {
+	for (var i = 0; i < dlt.length; i++) {
+		dlt[i].addEventListener("click", function() {
+			this.parentNode.remove();
+		})
+		listItem[i].addEventListener("click", addToggle);
+	}
 }
 
 function addEntry() {
@@ -28,11 +28,12 @@ function addEntry() {
 		var newItem = document.createElement("li");
 		newItem.appendChild(document.createTextNode(input.value));
 		ul.appendChild(newItem);	
-		newItem.addEventListener("click",addToggle);
-		//delete
+		//adding button element in newItem which itself is in ul
 		delButton(newItem);
+		//now we recognize newly added elements if any
 		dlt = document.querySelectorAll(".delete");
-		deleteMe();
+		listItem = document.querySelectorAll("li");
+		deleteMeAndAddingLineThru();
 			input.value="";	}
 }
 
@@ -41,8 +42,4 @@ input.addEventListener("keypress", function() {
 	if ( event.keyCode === 13 ) {
 	addEntry()}
 });
-
-for ( var i = 0 ; i < listItem.length; i++) {
- 	listItem[i].addEventListener("click", addToggle);
-}
 

@@ -1,5 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb( 225, 200, 0);
 }
 h1{
     text-align: center;
@@ -20,9 +21,14 @@ h1{
 }
 .ulwrapper{
     max-width: 500px;
+    margin: auto;
     display: flex;
     justify-content: center;
 }
 .done{
     text-decoration: line-through;
+}
+.delete{
+    border-radius: 5px;
+    margin-left: 20px ;
 }
